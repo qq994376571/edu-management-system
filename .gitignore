@@ -1,0 +1,13 @@
+﻿node_modules/
+dist/
+release/
+release-*/
+.vite-cache/
+mock-server.cjs
+.DS_Store
+Thumbs.db
+*.log
+src/App.tsx.orig
+safe_fix.py
+safe_fix2.py
+scripts/__pycache__/

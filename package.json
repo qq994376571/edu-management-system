@@ -1,0 +1,70 @@
+{
+  "name": "desktop-app",
+  "private": true,
+  "version": "3.0.2",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "prebuild": "node prebuild.cjs",
+    "build": "vite build && electron-builder",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "electron:start": "cross-env NODE_ENV=development electron .",
+    "test": "vitest run"
+  },
+  "build": {
+    "appId": "com.code.desktop",
+    "productName": "教务进度中心",
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "forceCodeSigning": false,
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "asar": true
+  },
+  "dependencies": {
+    "lucide-react": "^1.21.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.0.1",
+    "@tailwindcss/vite": "^4.3.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "autoprefixer": "^10.5.2",
+    "concurrently": "^10.0.3",
+    "cross-env": "^10.1.0",
+    "electron": "^28.3.3",
+    "electron-builder": "^26.15.3",
+    "electron-packager": "^17.1.2",
+    "jsdom": "^29.1.1",
+    "oxlint": "^1.69.0",
+    "postcss": "^8.5.15",
+    "puppeteer": "^25.2.1",
+    "tailwindcss": "^4.3.1",
+    "tslib": "^2.8.1",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.0",
+    "vitest": "^4.1.9",
+    "wait-on": "^9.0.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/example/example.git"
+  }
+}
